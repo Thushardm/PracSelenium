@@ -21,7 +21,7 @@ pipeline{
 		
 		stage('Run'){
 			steps{
-				sh 'mvn exec:java -Dexec.mainClass=com.example.App'
+				archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
 			}
 		}
 	}
